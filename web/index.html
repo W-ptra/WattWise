@@ -46,12 +46,10 @@
         <h1 class="text-center mb-4" style="font-weight: 600;">Service</h1>
 
         <!--Scrollable element-->
-
-        <form id="component_list" class="d-flex flex-column " style="overflow-y: auto; overflow-x: hidden; height: 20rem; width: 100%; background-color: #F6AE2D; margin: 0px; align-items: center;">
-          
+        <form id="component_list" class="d-flex flex-column overflow-y-scroll" style=" overflow-x: hidden; height: 20rem; width: 100%; margin: 0px; align-items: center; border: 2px solid black;">
           
           <!--Element 1-->
-          <div id="element1" class="card mt-3 mb-3" style="">
+          <div id="element" class="card mt-3 mb-3" style="">
             <div class="card-header ">
               Electrical Element
             </div>
@@ -60,24 +58,24 @@
                 <div class="input-group">
                     <label class="input-group-text" for="inputGroupSelect01">Component Type</label>
                     <select class="form-select" id="inputGroupSelect01">
-                      <option selected>Lamp</option>
-                      <option value="1">TV</option>
-                      <option value="2">AC</option>
-                      <option value="3">Gadget</option>
-                      <option value="4">Other</option>
-                    </select>
+                          <option selected>Lamp</option>
+                          <option value="1">TV</option>
+                          <option value="2">AC</option>
+                          <option value="3">Gadget</option>
+                          <option value="4">Other</option>
+                  </select>
                 </div>
               </li>
               <li class="list-group-item">
                 <div class="input-group">
                   <span class="input-group-text" id="basic-addon1">Watt</span>
-                  <input type="number" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+                  <input type="number" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" min="1" max="999">
                 </div>
               </li>
               <li class="list-group-item">
                 <div class="input-group">
                   <span class="input-group-text" id="basic-addon1">Jam Pemakian/Hari</span>
-                  <input type="number" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+                  <input type="number" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" min="1" max="999">
                 </div>
               </li>
               <li class="list-group-item d-flex justify-content-center">
@@ -85,18 +83,55 @@
               </li>
               
             </ul>
-        </div>
+          </div>
         
         </form>
 
-        <div class="mb-4 mt-3 text-center">
+        <div class="text-center mt-4">
           <button type="button" class="btn btn-primary" onclick="addElement()" style="width: 15rem;">Add New Element</button>
+        </div>
+
+        <div>
+          <div class="input-group mt-4">
+            <span class="input-group-text" id="basic-addon1">Electricity Tariff</span>
+            <input type="number" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+            <span class="input-group-text" id="basic-addon1">/ kWh</span>
+          </div>
+          <div class="form-text" id="basic-addon4">Click to check your Tariff here</div>
+        </div>
+
+        <div>
+          <div class="input-group mt-4 mb-4">
+            <span class="input-group-text" id="basic-addon1">Electricity Token</span>
+            <input type="number" class="form-control" placeholder="Optional" aria-label="Username" aria-describedby="basic-addon1">
+            <span class="input-group-text" id="basic-addon1">/ kWh</span>
+          </div>
+        </div>
+
+        <div class="mb-4 mt-3 text-center">
           <button type="button" class="btn btn-primary" onclick="drawChart()" style="width: 15rem;">Calculate Consumtion</button>
         </div>
 
-        <div class="" style="display: flex; align-items: center; justify-content: center;">
-          <canvas id="myChart" style="width:0%;max-width:0px"></canvas>
+        
 
+        <div class="row container">
+          <div class="col-md-6">
+            <div class="mb-3 mt-3" style="display: flex; align-items: center; justify-content: center;">
+              <canvas id="pieChart" style="width:0%;max-width:0px"></canvas>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="mb-3 mt-3" style="display: flex; align-items: center; justify-content: center;">
+              <canvas id="barChart" style="width:0%;max-width:0px"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="mb-3 mt-3" style="display: flex; align-items: center; justify-content: center;">
+            <canvas id="graphChart" style="width:0%;max-width:0px"></canvas>
+          </div>
+        </div>
         </div>
         
     </div>

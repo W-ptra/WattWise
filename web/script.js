@@ -24,13 +24,13 @@ function addElement(){
         <li class="list-group-item">
           <div class="input-group">
             <span class="input-group-text" id="basic-addon1">Watt</span>
-            <input type="number" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+            <input type="number" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" min="1" max="999">
           </div>
         </li>
         <li class="list-group-item">
           <div class="input-group">
             <span class="input-group-text" id="basic-addon1">Jam Pemakian/Hari</span>
-            <input type="number" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+            <input type="number" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" min="1" max="999">
           </div>
         </li>
         <li class="list-group-item d-flex justify-content-center">
@@ -56,27 +56,82 @@ function deleteElement(button) {
 
 function drawChart(){
 
-    document.getElementById("myChart").setAttribute('style', 'width:100%;max-width:700px;');
-    
-    const xValues = ["Italy", "France", "Spain", "USA", "Argentina"];
-    const yValues = [55, 49, 44, 24, 15];
-    const barColors = ["red", "green","blue","orange","brown"];
-    
-    new Chart("myChart", {
-      type: "bar",
-      data: {
+    document.getElementById("pieChart").setAttribute('style', 'width:100%;max-width:700px;');
+    document.getElementById("barChart").setAttribute('style', 'width:100%;max-width:700px;');
+    document.getElementById("graphChart").setAttribute('style', 'width:100%;max-width:700px;');
+
+    const xValues = ["HP", "Laptop", "AC"];
+    const yValues = [17, 35, 65];
+    const barColors = [
+    "#b91d47",
+    "#00aba9",
+    "#2b5797"
+    ];
+
+    new Chart("pieChart", {
+    type: "pie",
+    data: {
         labels: xValues,
         datasets: [{
-          backgroundColor: barColors,
-          data: yValues
+        backgroundColor: barColors,
+        data: yValues
         }]
-      },
-      options: {
+    },
+    options: {
+        title: {
+        display: true,
+        text: "Watt Consumtion Distribution"
+        }
+    }
+    });
+
+
+    const xValues1 = ["Day", "Week", "Month"];
+    const yValues1 = [1.241, 8.687, 37.230];
+    const barColors1 = ["red", "green","blue"];
+
+    new Chart("barChart", {
+    type: "bar",
+    data: {
+        labels: xValues1,
+        datasets: [{
+        backgroundColor: barColors1,
+        data: yValues1
+        }]
+    },
+    options: {
         legend: {display: false},
         title: {
-          display: true,
-          text: "World Wine Production 2018"
+        display: true,
+        text: "Total Watt consumed (in kWh)"
         }
-      }
+    }
+    });
+
+    const xValues2 = ["day1","day2","day3","day4","day5","day6","day7","day8","day9","day10","day11"];
+    const yValues2 = [15,14,14,11,10,9,9,8,7,5,2];
+
+    new Chart("graphChart", {
+    type: "line",
+    data: {
+        labels: xValues2,
+        datasets: [{
+        fill: false,
+        lineTension: 0,
+        backgroundColor: "rgba(0,0,255,1.0)",
+        borderColor: "rgba(0,0,255,0.1)",
+        data: yValues2
+        }]
+    },
+    options: {
+        legend: {display: false},
+        scales: {
+        yAxes: [{ticks: {min: 6, max:16}}],
+        },
+        title: {
+            display: true,
+            text: "Electricity Token Forecast"
+            }
+    }
     });
 }
