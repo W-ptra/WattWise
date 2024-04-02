@@ -49,33 +49,27 @@
         <form id="component_list" class="d-flex flex-column overflow-y-scroll" style=" overflow-x: hidden; height: 20rem; width: 100%; margin: 0px; align-items: center; border: 2px solid black;">
           
           <!--Element 1-->
-          <div id="element" class="card mt-3 mb-3" style="">
+          <div class="card mt-3 mb-3">
             <div class="card-header ">
               Electrical Element
             </div>
             <ul class="list-group list-group-flush">
               <li class="list-group-item" >
                 <div class="input-group">
-                    <label class="input-group-text" for="inputGroupSelect01">Component Type</label>
-                    <select class="form-select" id="inputGroupSelect01">
-                          <option selected>Lamp</option>
-                          <option value="1">TV</option>
-                          <option value="2">AC</option>
-                          <option value="3">Gadget</option>
-                          <option value="4">Other</option>
-                  </select>
+                  <span class="input-group-text" id="basic-addon1">Component Name</span>
+                  <input id="name_input0" type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
                 </div>
               </li>
               <li class="list-group-item">
                 <div class="input-group">
                   <span class="input-group-text" id="basic-addon1">Watt</span>
-                  <input type="number" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" min="1" max="999">
+                  <input id="watt_input0" type="number" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" min="1" max="999">
                 </div>
               </li>
               <li class="list-group-item">
                 <div class="input-group">
                   <span class="input-group-text" id="basic-addon1">Jam Pemakian/Hari</span>
-                  <input type="number" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" min="1" max="999">
+                  <input id="usage_input0" type="number" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" min="1" max="999">
                 </div>
               </li>
               <li class="list-group-item d-flex justify-content-center">
@@ -94,7 +88,8 @@
         <div>
           <div class="input-group mt-4">
             <span class="input-group-text" id="basic-addon1">Electricity Tariff</span>
-            <input type="number" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+            <span class="input-group-text" id="basic-addon1">Rp.</span>
+            <input id="tariff" type="number" class="form-control" placeholder="9100" aria-label="Username" aria-describedby="basic-addon1">
             <span class="input-group-text" id="basic-addon1">/ kWh</span>
           </div>
           <div class="form-text" id="basic-addon4">Click to check your Tariff here</div>
@@ -103,7 +98,7 @@
         <div>
           <div class="input-group mt-4 mb-4">
             <span class="input-group-text" id="basic-addon1">Electricity Token</span>
-            <input type="number" class="form-control" placeholder="Optional" aria-label="Username" aria-describedby="basic-addon1">
+            <input id="token" type="number" class="form-control" placeholder="Optional" aria-label="Username" aria-describedby="basic-addon1">
             <span class="input-group-text" id="basic-addon1">/ kWh</span>
           </div>
         </div>
