@@ -44,7 +44,7 @@ function deleteElement(button) {
     if (parentElement) {
         var parentId = parentElement.id;
         parentElement.remove();
-        console.log('Deleted element with ID:', parentId);
+        //console.log('Deleted element with ID:', parentId);
     }
 }
 
@@ -82,7 +82,6 @@ function drawChart(){
 
     document.getElementById("pieChart").setAttribute('style', 'width:100%;max-width:700px;');
     document.getElementById("barChart").setAttribute('style', 'width:100%;max-width:700px;');
-    document.getElementById("graphChart").setAttribute('style', 'width:100%;max-width:40rem;');
 
     const xValues = [...nameArray];
     const yValues = [...wattArray];
@@ -149,22 +148,24 @@ function drawChart(){
     }
     });
 
+    console.log(token)
+    if(token === "")return;
+
+    document.getElementById("graphChart").setAttribute('style', 'width:100%;max-width:40rem;');
+
     const kWhPerDay = day/1000;
     const day_forecast = token/kWhPerDay;
     const xValueLabel = [0];
     const yValueLabel = [token];
-    console.log(day_forecast)
-    console.log(token)
-    //console.log(total);
-    //console.log("day: ",day)
+    
     let total = token;
-    //console.log("token total ",total);
+    
 
     for(let i=1;i<=day_forecast+1;i++){
       xValueLabel.push(`${i}`);
-      //console.log(total);
+      
       total = total-kWhPerDay;
-      //console.log(total);
+      
       
       if(total < 0){
         yValueLabel.push(0)
@@ -173,8 +174,6 @@ function drawChart(){
         yValueLabel.push(total)
       }
     }
-
-    console.log(yValueLabel);
 
     new Chart("graphChart", {
     type: "line",
