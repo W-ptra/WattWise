@@ -2,7 +2,7 @@
   "name": "wattwiser",
   "version": "1.0.0",
   "description": "Project Software Engineer Semester 4",
-  "main": "app.mjs",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

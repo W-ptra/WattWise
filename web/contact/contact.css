@@ -1,0 +1,43 @@
+
+.footer{
+  max-width: 1000px;
+}
+
+.contact {
+    text-align: left;
+    padding: 50px;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  .contact .contact-sections {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .contact .contact-sections div {
+    max-width: calc(100% / 3);
+    padding: 2rem 0rem;
+    top: 0;
+  }
+  
+  .contact .contact-sections p {
+    font-size: 14px;
+  }
+  
+  .contact .contact-bottom {
+    text-align: center;
+  }
+  
+  .contact .contact-bottom p {
+    font-size: 14px;
+  }
+  
+  .contact ul {
+    list-style: none;
+  }
+  
+  .contact ul li {
+    font-size: 14px;
+    color: #fff;
+  }
