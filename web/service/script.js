@@ -6,40 +6,46 @@ function switchTrue(){
 }
 
 function addElement() {
-  const htmlElement = `
-    
-    <!--Element ${itteration + 1}-->
-    <div class="card mt-3 mb-3" style="">
-      <div class="card-header ">
-        Electrical Element
-      </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item" >
-          <div class="input-group">
-            <span class="input-group-text" id="basic-addon1">Component Name</span>
-            <input id="name_input${itteration}" type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
-          </div>
-        </li>
-        <li class="list-group-item">
-          <div class="input-group">
-            <span class="input-group-text" id="basic-addon1">Watt</span>
-            <input id="watt_input${itteration}" type="number" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" min="1" max="999">
-          </div>
-        </li>
-        <li class="list-group-item">
-          <div class="input-group">
-            <span class="input-group-text" id="basic-addon1">Jam Pemakian/Hari</span>
-            <input id="usage_input${itteration}" type="number" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" min="1" max="999">
-          </div>
-        </li>
-        <li class="list-group-item d-flex justify-content-center">
-          <button class="btn btn-primary" type="button" style="width: 25rem; height: 3rem;" onclick="deleteElement(this)">Delete</button>
-        </li>
-        
-      </ul>
-    </div>
 
-    `;
+
+  const htmlElement = `
+  <!--Element ${itteration + 1}-->
+      <div class="card mt-3 mb-3" style="font-size: 1rem; width: 20rem;">
+        <div class="card-header ">
+          Electrical Element
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <div class="input-group">
+              <span class="input-group-text" id="basic-addon1">Component Name</span>
+              <input id="name_input${itteration + 1}" type="text" class="form-control" placeholder="" aria-label="Username"
+                aria-describedby="basic-addon1">
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div class="input-group">
+              <span class="input-group-text" id="basic-addon1">Watt</span>
+              <input id="watt_input${itteration + 1}" type="number" class="form-control" placeholder="" aria-label="Username"
+                aria-describedby="basic-addon1" min="1" max="999">
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div class="input-group">
+              <span class="input-group-text" id="basic-addon1">Jam Pemakian/Hari</span>
+              <input id="usage_input${itteration + 1}" type="number" class="form-control" placeholder="" aria-label="Username"
+                aria-describedby="basic-addon1" min="1" max="999">
+            </div>
+          </li>
+          <li class="list-group-item d-flex justify-content-center">
+            <button class="btn btn-primary" type="button" style="width: 25rem; height: 3rem;"
+              onclick="deleteElement(this)">Delete</button>
+          </li>
+
+        </ul>
+      </div>
+  
+  `;
+  console.log("itteration ",itteration)
   itteration++;
   document.getElementById("component_list").innerHTML += htmlElement;
 }
@@ -61,12 +67,14 @@ function drawChart() {
   const token = document.getElementById("token").value;
   if (tariff === "") tariff = 1352;
 
-  for (let i = 0; i < itteration; i++) {
+  for (let i = 0; i <= itteration; i++) {
 
     try {
       const name = document.getElementById(`name_input${i}`).value;
       const watt = document.getElementById(`watt_input${i}`).value;
       const usage = document.getElementById(`usage_input${i}`).value;
+
+      console.log(watt);
 
       nameArray.push(name);
       wattArray.push(watt);
@@ -135,13 +143,16 @@ function drawChart() {
     "purple"
   ];
 
+  console.log(nameArray)
+  console.log(wattArray)
+
   new Chart("pieChart", {
     type: "pie",
     data: {
-      labels: xValues,
+      labels: nameArray,
       datasets: [{
         backgroundColor: barColors,
-        data: yValues
+        data: wattArray
       }]
     },
     options: {

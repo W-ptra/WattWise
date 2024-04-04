@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const app = express();
-const port = 8080;
+const port = 80;
 
 app.use(express.json());
 app.use(cors({ origin: '*' }));
@@ -25,8 +25,6 @@ app.get('/product', (req, res) => {
 app.get('/contact', (req, res) => {
     res.sendFile('contact/contact.html', { root: __dirname + '/web' });
 });
-
-
 
 app.listen(port,"0.0.0.0",()=>{
     console.log(`Listening to port:${port}`);
