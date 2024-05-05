@@ -122,6 +122,11 @@ function drawChart() {
   const week = day * 7;
   const month = day * 30;
 
+  const floatArray = wattArray.map(str => parseFloat(str));
+
+  let totalWatt1 = floatArray.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+  document.getElementById("Label_total_watt").textContent = "Total Watt = " + totalWatt1;
+
   const kWhArray = [(day / 1000) * tariff, (week / 1000) * tariff, (month / 1000) * tariff]
 
   document.getElementById("pieChart").setAttribute('style', 'width:100%;max-width:700px;');
@@ -143,8 +148,8 @@ function drawChart() {
     "purple"
   ];
 
-  console.log(nameArray)
-  console.log(wattArray)
+  //console.log(nameArray)
+  //console.log(wattArray)
 
   new Chart("pieChart", {
     type: "pie",
