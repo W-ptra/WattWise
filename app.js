@@ -15,21 +15,17 @@ app.get('/',(req,res)=>{
 });
 
 app.get('/home', (req, res) => {
-    //res.sendFile('home/home.html', { root: __dirname + '/web' });
     res.status(200).render('home/home',{server_identity: server_name});
 });
 
 app.get('/service', (req, res) => {
-    //res.sendFile('second_page/index.html', { root: __dirname + '/web' });
     res.status(200).render('service/index',{server_identity: server_name});
 });
 
 app.get('/product', (req, res) => {
-    //res.sendFile('product/product.html', { root: __dirname + '/web' });
     res.status(200).render('product/product',{server_identity: server_name});
 });
 app.get('/contact', (req, res) => {
-    //res.sendFile('contact/contact.html', { root: __dirname + '/web' });
     res.status(200).render('contact/contact',{server_identity: server_name});
 });
 
