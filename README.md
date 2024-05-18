@@ -8,7 +8,7 @@ website link: https://wattwise.wisnuputra.xyz/
 ![img](https://drive.google.com/uc?export=view&id=1Y1x0TDKoy4aQ95MC-2iHCENzzhzCc_84)  
 3. Input Electric tools Watt, Hour Usage, Electricity tariff, and Electricity Token (*Optional)  
   
-![img](https://drive.google.com/uc?export=view&id=1HoVq3ptopD_S-i4zHHVOAMrYSYHT-NHZ) 
+![img](https://drive.google.com/uc?export=view&id=1HoVq3ptopD_S-i4zHHVOAMrYSYHT-NHZ)  
 5. Click ``Calculate Consumtion`` Button  
   
 ![img](https://drive.google.com/uc?export=view&id=1U2qIj4xfsJj0GTz7Uhj5xvP0UNg5sn9L)
