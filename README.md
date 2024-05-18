@@ -9,7 +9,7 @@ website link: https://wattwise.wisnuputra.xyz/
 ![img](https://drive.google.com/uc?export=view&id=1HoVq3ptopD_S-i4zHHVOAMrYSYHT-NHZ) 
 5. Click ``Calculate Consumtion`` Button
 ![img](https://drive.google.com/uc?export=view&id=1U2qIj4xfsJj0GTz7Uhj5xvP0UNg5sn9L)
-# Tech Stack & architecture 
+# Tech Stack 
 1. Node.js
 2. Express.js
 3. EJS
@@ -17,7 +17,10 @@ website link: https://wattwise.wisnuputra.xyz/
 5. NGINX
 6. Docker
 7. Cloudflare
-
+# Architecture  
+Wattwise hosted at Alibabacloud's ECS instance and running on Docker container, when user accessing ``https://wattwise.wisnuputra.xyz`` cloudflare thru it's tunnel will route user's request to Nginx, then distribute equally (round robin loud balancing) to 3 web server.  
 ![img](https://drive.google.com/uc?export=view&id=13CkroTVkFGj5DT7N5Dt6zbgU-pUBf_zR)
 ## Why using cloudflare?  
 Cloudflare on it's Zero Trust feature provided us with network tunnel, allowing us to use secure HTTPS connection for free.
+# Docker Use
+``run -d --name {container name} -p 8080:80 -e SERVER_NAME={server name} wisnup001binus/wattwise:2.0``  
