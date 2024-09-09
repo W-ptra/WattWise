@@ -1,7 +1,6 @@
 # WattWise
 Project mata kuliah Software Engineer Semester 4 Wattwise is a web-based electricity calculator that can help you calculate the amount of electricity used in your home, sum the bills by the time (day,week, and month), and predict how long it will take for your electricity tokens to run out (in day), which will be visualized in graph.  
-# How to Use
-website link: https://wattwise.wisnuputra.xyz/  
+# How to Use 
 1. Go to Service
   
 ![img](https://drive.google.com/uc?export=view&id=1Y1x0TDKoy4aQ95MC-2iHCENzzhzCc_84)  
